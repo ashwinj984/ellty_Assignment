@@ -69,6 +69,8 @@ export const CustomCheckbox: React.FC<{ sx?: SxProps<Theme> }> = ({ sx, ...props
                 handlePressingState()
 
             }}
+            /* eslint-disable @typescript-eslint/ban-ts-comment */
+            // @ts-ignore
             backgroundColor={handleBackgroundColor()}
             onMouseUp={() => handlePressingStateMouseUp()}
             onMouseEnter={() => setHovered(true)}
@@ -79,7 +81,7 @@ export const CustomCheckbox: React.FC<{ sx?: SxProps<Theme> }> = ({ sx, ...props
             sx={{ ...sx }}
             {...props}>
             {renderComponent()}
-        </Box>
+        </Box >
 
         // </Box >
     )
