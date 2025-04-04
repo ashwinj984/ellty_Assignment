@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, CheckList, Button, Text, CustomCheckbox } from "../Components";
+import { Box, CheckList, Button, Text } from "../Components";
+import { en, theme } from "../src";
 
 export const Assignment = () => {
     return (
@@ -14,25 +15,24 @@ export const Assignment = () => {
                 marginTop: '12vh',
                 borderRadius: '8px',
             }}>
-            <CheckList content='All the Pages' />
-            <Box sx={{ height: "1px", width: "22vw", bgcolor: "#CDCDCD", border: '0.7px', alignSelf: 'center', }} />
+            <CheckList content={en.allPages} />
+            <Box sx={{ height: "1px", width: "22vw", bgcolor: theme.colorPalette.borderColor, border: '0.7px', alignSelf: 'center' }} />
             {[...Array(4)].map((_, key) => (
                 <Box key={key}>
-                    <CheckList content={`Page ${key + 1}`} />
+                    <CheckList content={`${en.page} ${key + 1}`} />
                 </Box>
             ))}
 
-            <Box sx={{ height: "1px", width: "22vw", bgcolor: "#CDCDCD", border: '0.7px', alignSelf: 'center', marginBottom: '1.5vh' }} />
+            <Box sx={{ height: "1px", width: "22vw", bgcolor: theme.colorPalette.borderColor, border: '0.7px', alignSelf: 'center', marginBottom: '1.5vh' }} />
             <Button
-
                 sx={{
-                    backgroundColor: "#FFCE22",
+                    backgroundColor: '#FFCE22',
                     width: '22vw',
                     marginBottom: '2vh',
                     fontFamily: 'Montserrat',
                     fontWeight: '400',
                     ":hover": {
-                        backgroundColor: "#FFD84D",
+                        backgroundColor: theme.colorPalette.buttonHoverColor,
                     }
                 }} >
                 <Text sx={{ fontFamily: 'Montserrat', color: '#1F2128', fontWeight: '400', verticalAlign: 'middle', fontSize: '14px' }}>

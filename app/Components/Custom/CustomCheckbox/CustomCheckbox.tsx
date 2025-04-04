@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import { SxProps } from "@mui/material";
 import { Theme } from "@emotion/react";
-import { Box, Text } from "../../core";
+import { Box } from "../../core";
 import CheckMark from './checkmark.png'
 import Image from "next/image";
+import { theme } from "@/app/src";
 
 
 export const CustomCheckbox: React.FC<{ sx?: SxProps<Theme> }> = ({ sx, ...props }) => {
@@ -48,11 +49,11 @@ export const CustomCheckbox: React.FC<{ sx?: SxProps<Theme> }> = ({ sx, ...props
 
     const handleBackgroundColor = () => {
         if (!checked) {
-            return 'white';
+            return theme.colorPalette.white;
         } else if (checked && !hovered) {
-            return '#2469F6'
+            return theme.colorPalette.checkedNotHovered;
         } else if (checked && hovered) {
-            return '#5087F8'
+            return theme.colorPalette.checkedAndHovered;
         }
     }
     return (
@@ -62,7 +63,7 @@ export const CustomCheckbox: React.FC<{ sx?: SxProps<Theme> }> = ({ sx, ...props
             borderRadius='6px'
             marginTop='6.5px'
             marginLeft='6px'
-            border={pressingState ? (checked ? "2px solid grey" : "4px solid #AFDDFF") : "2px solid #F1EFEC"}
+            border={pressingState ? (checked ? `2px solid ${theme.colorPalette.borderColor}` : `4px solid ${theme.colorPalette.borderColorChecked}`) : `2px solid ${theme.colorPalette.borderColor}`}
             display='flex'
             onMouseDown={() => {
                 handlePressingState()

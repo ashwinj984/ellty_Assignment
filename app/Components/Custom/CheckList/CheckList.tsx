@@ -1,11 +1,12 @@
 import React from "react";
 import { Box, Checkbox, Text } from "../../core";
 import { CustomCheckbox } from "../CustomCheckbox";
+import { theme } from "@/app/src";
 
 export const CheckList = ({ content }: { content: string }) => {
     return (
         <Box display='flex' sx={{
-            bgcolor: "#ffffff",
+            bgcolor: theme.colorPalette.white,
             textAlign: "center",
             width: "24vw",
             height: "6vh",
