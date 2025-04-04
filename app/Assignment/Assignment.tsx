@@ -3,7 +3,6 @@ import { Box, CheckList, Button, Text, CustomCheckbox } from "../Components";
 
 export const Assignment = () => {
     return (
-        <>
         <Box
             sx={{
                 display: 'flex',
@@ -17,10 +16,12 @@ export const Assignment = () => {
             }}>
             <CheckList content='All the Pages' />
             <Box sx={{ height: "1px", width: "22vw", bgcolor: "#CDCDCD", border: '0.7px', alignSelf: 'center', }} />
-            <CheckList content={"All the Pages"} />
-            <CheckList content={"All the Pages"} />
-            <CheckList content={"All the Pages"} />
-            <CheckList content={"All the Pages"} />
+            {[...Array(4)].map((_, key) => (
+                <Box key={key}>
+                    <CheckList content={`Page ${key + 1}`} />
+                </Box>
+            ))}
+
             <Box sx={{ height: "1px", width: "22vw", bgcolor: "#CDCDCD", border: '0.7px', alignSelf: 'center', marginBottom: '1.5vh' }} />
             <Button
 
@@ -30,18 +31,15 @@ export const Assignment = () => {
                     marginBottom: '2vh',
                     fontFamily: 'Montserrat',
                     fontWeight: '400',
-                    ":hover":{
+                    ":hover": {
                         backgroundColor: "#FFD84D",
                     }
                 }} >
                 <Text sx={{ fontFamily: 'Montserrat', color: '#1F2128', fontWeight: '400', verticalAlign: 'middle', fontSize: '14px' }}>
-                 Done
+                    Done
                 </Text>
             </Button>
         </Box>
-
-        <CustomCheckbox/>
-        </>
 
     )
 }
