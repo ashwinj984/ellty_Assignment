@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Checkbox, Text } from "../../core";
+import { Box, Text } from "../../core";
 import { CustomCheckbox } from "../CustomCheckbox";
 import { theme } from "@/app/src";
 
