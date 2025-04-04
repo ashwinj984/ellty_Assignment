@@ -75,7 +75,9 @@ export const CustomCheckbox: React.FC<{ sx?: SxProps<Theme> }> = ({ sx, ...props
             onMouseLeave={() => {
                 setHovered(false)
 
-            }} >
+            }}
+            sx={{ ...sx }}
+            {...props}>
             {renderComponent()}
         </Box>
 
