@@ -42,7 +42,6 @@ export const CustomCheckbox: React.FC<{ sx?: SxProps<Theme> }> = ({ sx, ...props
     }
 
     const handlePressingStateMouseUp = () => {
-        console.log("Ashwin Jain")
         setPressingState(false);
         setChecked(checked => !checked);
     }
@@ -82,7 +81,5 @@ export const CustomCheckbox: React.FC<{ sx?: SxProps<Theme> }> = ({ sx, ...props
             {...props}>
             {renderComponent()}
         </Box >
-
-        // </Box >
     )
 }
