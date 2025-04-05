@@ -1,8 +1,22 @@
+"use client";
 import React from "react";
 import { Box, CheckList, Button, Text } from "../Components";
 import { en, theme } from "../src";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Assignment = () => {
+
+    const Msg = () => (
+        <Box display='flex' flexDirection='column' justifyContent='flex-start'>
+            <Text sx={{ color: theme.colorPalette.white }}>{en.funText1}</Text>
+            <Text sx={{ color: theme.colorPalette.white }}>{en.funText2}</Text>
+        </Box >
+    );
+
+    const handleClick = () => {
+        toast(Msg);
+    };
+
     return (
         <Box
             sx={{
@@ -24,7 +38,17 @@ export const Assignment = () => {
             ))}
 
             <Box sx={{ height: "1px", width: "22vw", bgcolor: theme.colorPalette.borderColor, border: '0.7px', alignSelf: 'center', marginBottom: '1.5vh' }} />
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                theme="dark"
+            />
             <Button
+                onClick={() => handleClick()}
                 sx={{
                     backgroundColor: '#FFCE22',
                     width: '22vw',
